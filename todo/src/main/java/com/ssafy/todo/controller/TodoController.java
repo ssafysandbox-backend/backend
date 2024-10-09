@@ -42,4 +42,17 @@ public class TodoController {
         todoService.deleteById(todoId);
         return ResponseEntity.noContent().build();
     }
+
+    @PatchMapping("/{todoId}")
+    public ResponseEntity<?> updateTodo(@PathVariable long todoId) {
+        log.debug("PATCH todo ID {}", todoId);
+        try {
+            todoService.updateTodo(todoId);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.created(null).build();
+    }
 }
