@@ -32,3 +32,7 @@ out/
 /dist/
 /nbdist/
 /.nb-gradle/
+
+### Application setting files ###
+**/resources/application-local.yml
+**/resources/database-local.properties
