@@ -17,4 +17,11 @@ public class TodoService {
     public List<TodoVO> findAll() {
         return todoRepository.findAllProjectedByOrderByIdDesc();
     }
+
+    public void save(String content) {
+        Todo todo = new Todo();
+        todo.setContent(content);
+        todo.setCompleted(false);
+        todoRepository.save(todo);
+    }
 }
