@@ -5,6 +5,7 @@ import com.ssafy.todo.model.domain.TodoVO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface TodoRepository extends JpaRepository<Todo,Long> {
 
@@ -15,4 +16,7 @@ public interface TodoRepository extends JpaRepository<Todo,Long> {
 
     @Override
     void deleteById(Long todoId);
+
+    @Override
+    Optional<Todo> findById(Long todoId);
 }
