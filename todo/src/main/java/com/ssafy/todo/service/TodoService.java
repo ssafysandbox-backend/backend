@@ -24,4 +24,8 @@ public class TodoService {
         todo.setCompleted(false);
         todoRepository.save(todo);
     }
+
+    public void deleteById(long todoId) {
+        todoRepository.deleteById(todoId);
+    }
 }
