@@ -27,4 +27,12 @@ public class TodoController {
         result.put("todos", todos);
         return ResponseEntity.ok().body(result);
     }
+
+    @PostMapping()
+    public ResponseEntity<?> addTodo(@RequestBody TodoDTO body) {
+        String content = body.getContent();
+        log.debug("POST todo {}", content);
+        todoService.save(content);
+        return ResponseEntity.created(null).build();
+    }
 }
