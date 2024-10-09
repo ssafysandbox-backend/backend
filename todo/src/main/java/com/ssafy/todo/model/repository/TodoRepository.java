@@ -9,4 +9,7 @@ import java.util.List;
 public interface TodoRepository extends JpaRepository<Todo,Long> {
 
     List<TodoVO> findAllProjectedByOrderByIdDesc();
+
+    @Override
+    Todo save(Todo todo);
 }
