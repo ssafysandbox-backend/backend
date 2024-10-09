@@ -35,4 +35,11 @@ public class TodoController {
         todoService.save(content);
         return ResponseEntity.created(null).build();
     }
+
+    @DeleteMapping("/{todoId}")
+    public ResponseEntity<?> deleteTodo(@PathVariable long todoId) {
+        log.debug("delete todo id {}", todoId);
+        todoService.deleteById(todoId);
+        return ResponseEntity.noContent().build();
+    }
 }
