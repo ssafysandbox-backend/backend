@@ -5,7 +5,9 @@ spring:
   config:
 
     # import config file having database information
-    import: database.properties
+    import:
+        - database.properties
+        - front.properties
   datasource:
     url: ${db.url}
     username: ${db.username}
