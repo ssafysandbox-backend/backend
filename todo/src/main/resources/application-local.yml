@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  config:
+    import:
+      - database-local.properties
+      - front.properties
+  datasource:
+    url: ${DB.URL}
+    username: ${DB.USERNAME}
+    password: ${DB.PASSWORD}
+    driver-class-name: ${DB.DRIVER}
+  jpa:
+    hibernate:
+      ddl-auto: ${HIBERNATE_DDL_AUTO:update}
+    database-platform: ${DB.DIALECT}
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+logging:
+  level:
+    com.ssafy.todo: ${LOGGING_LEVEL:DEBUG}
