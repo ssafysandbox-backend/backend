@@ -12,13 +12,13 @@ spring:
     password: ${db.password}
 
     # driver name
-    driver-class-name:
+    driver-class-name: ${db.driver}
   jpa:
     hibernate:
       ddl-auto:
 
     # dialect setting
-    database-platform:
+    database-platform: ${db.dialect}
     properties:
       hibernate:
         show_sql:
