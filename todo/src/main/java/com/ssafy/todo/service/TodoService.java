@@ -5,6 +5,7 @@ import com.ssafy.todo.model.domain.TodoVO;
 import com.ssafy.todo.model.repository.TodoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class TodoService {
 
     private final TodoRepository todoRepository;
 
+    @Transactional(readOnly = true)
     public List<TodoVO> findAll() {
         return todoRepository.findAllProjectedByOrderByIdDesc();
     }
@@ -27,5 +29,12 @@ public class TodoService {
 
     public void deleteById(long todoId) {
         todoRepository.deleteById(todoId);
+    }
+
+    @Transactional
+    public void updateTodo(long todoId) throws Exception {
+        Todo todo = todoRepository.findById(todoId)
+                .orElseThrow(Exception::new);
+        todo.setCompleted(!todo.getCompleted());
     }
 }
