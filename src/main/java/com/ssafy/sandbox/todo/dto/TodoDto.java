@@ -23,7 +23,7 @@ public class TodoDto {
         return TodoDto.builder()
                 .id(todo.getId())
                 .content(todo.getContent())
-                .completed(todo.isDone())
+                .completed(todo.isCompleted())
                 .build();
     }
 }

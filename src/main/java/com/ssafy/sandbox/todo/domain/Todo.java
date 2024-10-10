@@ -14,5 +14,6 @@ public class Todo {
     private Long id;
     @Column(nullable = false)
     private String content;
-    private boolean isDone;
+    @Column(name = "completed")
+    private boolean completed;
 }
