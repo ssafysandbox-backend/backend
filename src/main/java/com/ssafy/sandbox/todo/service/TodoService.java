@@ -24,4 +24,15 @@ public class TodoService {
                 .map(todo -> new TodoDto(todo.getId(), todo.getContent(), todo.isCompleted()))
                 .collect(Collectors.toList());
     }
+
+    public TodoDto createTodo(TodoDto todoDto){
+        Todo todo = new Todo();
+        todo.setContent(todoDto.getContent());
+//      기본값은 false
+        todo.setCompleted(false);
+
+        Todo savedTodo = todoRepository.save(todo);
+        return TodoDto.from(savedTodo);
+    }
+
 }
