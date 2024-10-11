@@ -35,4 +35,10 @@ public class TodoService {
         return TodoDto.from(savedTodo);
     }
 
+    public void deleteTodo(Long todoId){
+        Todo todo = todoRepository.findById(todoId)
+                .orElseThrow(() -> new IllegalArgumentException("Todo for delete not found(Illegal or inappropriate parameter)"));
+        todoRepository.delete(todo);
+    }
+
 }

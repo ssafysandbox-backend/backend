@@ -28,4 +28,10 @@ public class TodoController {
     public TodoDto createTodo(@RequestBody TodoDto todoDto){
         return todoService.createTodo(todoDto);
     }
+
+    @DeleteMapping("/{todoId}")
+    public void deleteTodo(@PathVariable Long todoId){
+        todoService.deleteTodo(todoId);
+    }
+
 }
