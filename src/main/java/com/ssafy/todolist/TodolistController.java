@@ -11,15 +11,23 @@ import java.util.List;
 @RestController
 public class TodolistController {
 
+    private final TodoRepository todoRepository;
+
+    public TodolistController(TodoRepository todoRepository) {
+        this.todoRepository = todoRepository;
+    }
+
     @GetMapping()
     public TodolistDto todos() {
         TodolistDto todos = new TodolistDto();
+        todos.setTodos(todoRepository.findAll());
         System.out.println(todos);
         return todos;
     }
 
     @PostMapping()
-    public TodolistDto addTodo() {
-
+    public void addTodo(@RequestBody Todo todo) {
+        todoRepository.save(todo);
+        todos();
     }
 }

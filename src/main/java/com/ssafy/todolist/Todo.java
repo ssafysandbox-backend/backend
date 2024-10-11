@@ -1,6 +1,7 @@
 package com.ssafy.todolist;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 @Table(name = "todos")
@@ -10,6 +11,7 @@ public class Todo {
     private int id;
     @Column(nullable = false)
     private String content;
+    @ColumnDefault("false")
     private boolean completed;
 
     public int getId(){
