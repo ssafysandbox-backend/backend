@@ -44,7 +44,11 @@ public class TodolistController {
     public void updateTodo(@PathVariable("todoId") int todoId) {
         System.out.println("update");
         Todo todo = todoRepository.getReferenceById(todoId);
-        todo.setCompleted(true);
+        if (todo.getCompleted()) {
+            todo.setCompleted(false);
+        } else if (!todo.getCompleted()) {
+            todo.setCompleted(true);
+        }
         todoRepository.save(todo);
         todos();
     }
