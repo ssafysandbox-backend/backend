@@ -19,6 +19,7 @@ public class TodolistController {
 
     @GetMapping()
     public TodolistDto todos() {
+        System.out.println("select");
         TodolistDto todos = new TodolistDto();
         todos.setTodos(todoRepository.findAll());
         System.out.println(todos);
@@ -27,6 +28,7 @@ public class TodolistController {
 
     @PostMapping()
     public void addTodo(@RequestBody Todo todo) {
+        System.out.println("insert");
         todoRepository.save(todo);
         todos();
     }
@@ -35,6 +37,15 @@ public class TodolistController {
     public void deleteTodo(@PathVariable("todoId") int todoId) {
         System.out.println("delete");
         todoRepository.deleteById(todoId);
+        todos();
+    }
+
+    @PatchMapping("/{todoId}")
+    public void updateTodo(@PathVariable("todoId") int todoId) {
+        System.out.println("update");
+        Todo todo = todoRepository.getReferenceById(todoId);
+        todo.setCompleted(true);
+        todoRepository.save(todo);
         todos();
     }
 }
