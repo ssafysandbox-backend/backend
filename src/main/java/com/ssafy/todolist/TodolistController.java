@@ -30,4 +30,11 @@ public class TodolistController {
         todoRepository.save(todo);
         todos();
     }
+
+    @DeleteMapping("/{todoId}")
+    public void deleteTodo(@PathVariable("todoId") int todoId) {
+        System.out.println("delete");
+        todoRepository.deleteById(todoId);
+        todos();
+    }
 }
