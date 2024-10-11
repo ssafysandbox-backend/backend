@@ -41,4 +41,13 @@ public class TodoService {
         todoRepository.delete(todo);
     }
 
+    public void updateTodo(Long todoId){
+        Todo todo = todoRepository.findById(todoId)
+                .orElseThrow(() -> new IllegalArgumentException("Todo for update not found(Illegal or inappropriate parameter)"));
+
+        todo.setCompleted(!todo.isCompleted());
+        todoRepository.save(todo);
+    }
+
+
 }
