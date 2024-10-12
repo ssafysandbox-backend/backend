@@ -1,8 +1,7 @@
 package com.ssafy.todolist.controller;
 
-import com.ssafy.todolist.domain.TodolistDto;
 import com.ssafy.todolist.domain.Todo;
-import com.ssafy.todolist.repository.TodoRepository;
+import com.ssafy.todolist.domain.TodolistDto;
 import com.ssafy.todolist.service.TodoService;
 import org.springframework.web.bind.annotation.*;
 
