@@ -1,4 +1,4 @@
-package com.ssafy.todolist;
+package com.ssafy.todolist.domain;
 
 import java.util.ArrayList;
 import java.util.List;

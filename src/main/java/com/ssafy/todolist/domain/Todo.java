@@ -1,4 +1,4 @@
-package com.ssafy.todolist;
+package com.ssafy.todolist.domain;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
