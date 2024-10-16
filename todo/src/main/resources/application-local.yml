@@ -6,6 +6,7 @@ spring:
     import:
       - database-local.properties
       - front.properties
+      - message.properties
   datasource:
     url: ${DB.URL}
     username: ${DB.USERNAME}
