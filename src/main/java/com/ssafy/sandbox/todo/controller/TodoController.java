@@ -2,11 +2,8 @@ package com.ssafy.sandbox.todo.controller;
 
 
 import com.ssafy.sandbox.todo.dto.RequestDTO;
-import com.ssafy.sandbox.todo.dto.ResponseDTO;
 import com.ssafy.sandbox.todo.dto.TodoDTO;
-import com.ssafy.sandbox.todo.repository.TodoRepository;
 import com.ssafy.sandbox.todo.service.TodoService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
