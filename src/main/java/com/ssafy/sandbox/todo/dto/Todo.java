@@ -2,11 +2,10 @@ package com.ssafy.sandbox.todo.dto;
 
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 @Table(name = "todos")
-public class TodoDTO {
+public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -15,10 +14,14 @@ public class TodoDTO {
 
     private boolean completed;
 
-    public TodoDTO() {
+    public Todo() {
     }
 
-    public TodoDTO(long id, String content, boolean completed) {
+    public Todo(String content) {
+        this.content = content;
+    }
+
+    public Todo(long id, String content, boolean completed) {
         this.id = id;
         this.content = content;
         this.completed = completed;
@@ -28,16 +31,9 @@ public class TodoDTO {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getContent() {
         return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 
     public boolean isCompleted() {
@@ -48,12 +44,7 @@ public class TodoDTO {
         this.completed = completed;
     }
 
-    @Override
-    public String toString() {
-        return "TodoDTO{" +
-                "id=" + id +
-                ", content='" + content + '\'' +
-                ", completed=" + completed +
-                '}';
+    public static Todo from (String content) {
+        return new Todo(content);
     }
 }
