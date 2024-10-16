@@ -17,7 +17,7 @@ public class TodoService {
 
     @Transactional(readOnly = true)
     public List<TodoVO> findAll() {
-        return todoRepository.findAllProjectedByOrderByIdDesc();
+        return todoRepository.findAllProjectsBy();
     }
 
     public void save(String content) {
