@@ -1,6 +1,7 @@
 package com.ssafy.sandbox.paging.controller;
 
 import com.ssafy.sandbox.paging.dto.PagingCursorIdDto;
+import com.ssafy.sandbox.paging.dto.PagingOffsetDto;
 import com.ssafy.sandbox.paging.service.PagingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +23,9 @@ public class PagingController {
     public ResponseEntity<?> getTodosByOffset(@RequestParam int size, @RequestParam int page) {
         log.debug("Called getTodosByOffset");
         log.debug("size: {}, page:{}", size, page);
-        return ResponseEntity.ok().build();
+//        PagingOffsetDto result = pagingService.getTodosByOffset(size, page);
+        PagingOffsetDto result = pagingService.getTodosByOffsetV2(size, page);
+        return ResponseEntity.ok().body(result);
     }
 
     @GetMapping("/cursor")
