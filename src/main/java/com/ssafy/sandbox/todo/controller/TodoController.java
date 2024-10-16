@@ -12,29 +12,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/todos")
 @RequiredArgsConstructor
 public class TodoController {
 
     private final TodoService todoService;
 
-    @GetMapping()
+    @GetMapping("/todos")
     public TodoListResponse listAllTodos(){
         List<TodoDto> todos = todoService.getTodos();
         return new TodoListResponse(todos);
     }
 
-    @PostMapping()
+    @PostMapping("/todos")
     public TodoDto createTodo(@RequestBody TodoDto todoDto){
         return todoService.createTodo(todoDto);
     }
 
-    @DeleteMapping("/{todoId}")
+    @DeleteMapping("/todos/{todoId}")
     public void deleteTodo(@PathVariable Long todoId){
         todoService.deleteTodo(todoId);
     }
 
-    @PatchMapping("/{todoId}")
+    @PatchMapping("/todos/{todoId}")
     public void updateTodo(@PathVariable Long todoId){
         todoService.updateTodo(todoId);
     }
