@@ -1,7 +1,7 @@
 package com.ssafy.sandbox.todo.controller;
 
-import com.ssafy.sandbox.todo.model.domain.TodoDTO;
-import com.ssafy.sandbox.todo.model.domain.TodoVO;
+import com.ssafy.sandbox.todo.dto.TodoDTO;
+import com.ssafy.sandbox.todo.dto.TodoVO;
 import com.ssafy.sandbox.todo.service.TodoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

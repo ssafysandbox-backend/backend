@@ -1,4 +1,4 @@
-package com.ssafy.sandbox.todo.model.domain;
+package com.ssafy.sandbox.todo.dto;
 
 public interface TodoVO {
     Long getId();
