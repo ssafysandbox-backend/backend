@@ -1,4 +1,4 @@
-package com.ssafy.sandbox.model.domain;
+package com.ssafy.sandbox.todo.model.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

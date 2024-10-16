@@ -1,7 +1,7 @@
-package com.ssafy.sandbox.model.repository;
+package com.ssafy.sandbox.todo.model.repository;
 
-import com.ssafy.sandbox.model.domain.Todo;
-import com.ssafy.sandbox.model.domain.TodoVO;
+import com.ssafy.sandbox.todo.model.domain.Todo;
+import com.ssafy.sandbox.todo.model.domain.TodoVO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
