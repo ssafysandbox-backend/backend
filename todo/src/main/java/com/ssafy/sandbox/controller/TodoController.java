@@ -1,8 +1,8 @@
-package com.ssafy.todo.controller;
+package com.ssafy.sandbox.controller;
 
-import com.ssafy.todo.model.domain.TodoDTO;
-import com.ssafy.todo.model.domain.TodoVO;
-import com.ssafy.todo.service.TodoService;
+import com.ssafy.sandbox.model.domain.TodoDTO;
+import com.ssafy.sandbox.model.domain.TodoVO;
+import com.ssafy.sandbox.service.TodoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

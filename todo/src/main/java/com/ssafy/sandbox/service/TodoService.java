@@ -1,8 +1,8 @@
-package com.ssafy.todo.service;
+package com.ssafy.sandbox.service;
 
-import com.ssafy.todo.model.domain.Todo;
-import com.ssafy.todo.model.domain.TodoVO;
-import com.ssafy.todo.model.repository.TodoRepository;
+import com.ssafy.sandbox.model.domain.Todo;
+import com.ssafy.sandbox.model.domain.TodoVO;
+import com.ssafy.sandbox.model.repository.TodoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
