@@ -1,8 +1,8 @@
-package com.ssafy.todo.service;
+package com.ssafy.sandbox.todo.service;
 
-import com.ssafy.todo.model.domain.Todo;
-import com.ssafy.todo.model.domain.TodoVO;
-import com.ssafy.todo.model.repository.TodoRepository;
+import com.ssafy.sandbox.todo.domain.Todo;
+import com.ssafy.sandbox.todo.dto.TodoVO;
+import com.ssafy.sandbox.todo.repository.TodoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,7 +17,7 @@ public class TodoService {
 
     @Transactional(readOnly = true)
     public List<TodoVO> findAll() {
-        return todoRepository.findAllProjectedByOrderByIdDesc();
+        return todoRepository.findAllProjectsBy();
     }
 
     public void save(String content) {

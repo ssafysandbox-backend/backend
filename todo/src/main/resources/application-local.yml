@@ -6,6 +6,7 @@ spring:
     import:
       - database-local.properties
       - front.properties
+      - message.properties
   datasource:
     url: ${DB.URL}
     username: ${DB.USERNAME}
@@ -21,4 +22,4 @@ spring:
         format_sql: true
 logging:
   level:
-    com.ssafy.todo: ${LOGGING_LEVEL:DEBUG}
+    com.ssafy.sandbox: ${LOGGING_LEVEL:DEBUG}

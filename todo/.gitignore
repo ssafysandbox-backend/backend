@@ -36,3 +36,4 @@ out/
 ### Application setting files ###
 **/resources/database-local.properties
 **/resources/front.properties
+**/resources/message.properties
