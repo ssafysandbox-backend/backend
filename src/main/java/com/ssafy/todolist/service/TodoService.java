@@ -1,9 +1,13 @@
 package com.ssafy.todolist.service;
 
 import com.ssafy.todolist.domain.Todo;
-import com.ssafy.todolist.domain.TodolistDto;
+import com.ssafy.todolist.domain.TodoDTO;
 import com.ssafy.todolist.repository.TodoRepository;
+
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class TodoService {
@@ -14,26 +18,24 @@ public class TodoService {
         this.todoRepository = todoRepository;
     }
 
-    public TodolistDto getTodos() {
-        TodolistDto todos = new TodolistDto();
-        todos.setTodos(todoRepository.findAll());
-        return todos;
+    @Transactional(readOnly = true)
+    public List<TodoDTO> getTodos() {
+        return todoRepository.findAll().stream().map(TodoDTO::of).toList();
     }
 
+    @Transactional
     public void addTodo(Todo todo) {
         todoRepository.save(todo);
-        getTodos();
     }
 
+    @Transactional
     public void deleteTodo(int todoId) {
         todoRepository.deleteById(todoId);
-        getTodos();
     }
 
+    @Transactional
     public void updateTodo(int todoId) {
         Todo todo = todoRepository.getReferenceById(todoId);
         todo.setCompleted(!todo.getCompleted());
-        todoRepository.save(todo);
-        getTodos();
     }
 }

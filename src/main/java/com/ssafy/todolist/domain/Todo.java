@@ -6,11 +6,14 @@ import org.hibernate.annotations.ColumnDefault;
 @Entity
 @Table(name = "todos")
 public class Todo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(nullable = false)
     private String content;
+
     @ColumnDefault("false")
     private boolean completed;
 

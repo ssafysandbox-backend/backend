@@ -1,9 +1,14 @@
 package com.ssafy.todolist.controller;
 
+import com.ssafy.FindTodosResponse;
 import com.ssafy.todolist.domain.Todo;
-import com.ssafy.todolist.domain.TodolistDto;
+import com.ssafy.todolist.domain.TodoDTO;
 import com.ssafy.todolist.service.TodoService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequestMapping("/todos")
 @RestController
@@ -16,26 +21,24 @@ public class TodolistController {
     }
 
     @GetMapping()
-    public TodolistDto todos() {
-        System.out.println("select");
-        return todoService.getTodos();
+    public ResponseEntity<FindTodosResponse> todos() {
+        List<TodoDTO> todos = todoService.getTodos();
+        FindTodosResponse response = new FindTodosResponse("정상적으로 요청되었습니다.", todos);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @PostMapping()
     public void addTodo(@RequestBody Todo todo) {
-        System.out.println("insert");
         todoService.addTodo(todo);
     }
 
     @DeleteMapping("/{todoId}")
     public void deleteTodo(@PathVariable("todoId") int todoId) {
-        System.out.println("delete");
         todoService.deleteTodo(todoId);
     }
 
     @PatchMapping("/{todoId}")
     public void updateTodo(@PathVariable("todoId") int todoId) {
-        System.out.println("update");
         todoService.updateTodo(todoId);
     }
 }
