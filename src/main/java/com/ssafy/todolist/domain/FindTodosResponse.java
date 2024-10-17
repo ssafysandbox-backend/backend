@@ -1,6 +1,4 @@
-package com.ssafy;
-
-import com.ssafy.todolist.domain.TodoDTO;
+package com.ssafy.todolist.domain;
 
 import java.util.List;
 

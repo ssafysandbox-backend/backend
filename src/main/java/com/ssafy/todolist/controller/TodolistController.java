@@ -1,6 +1,6 @@
 package com.ssafy.todolist.controller;
 
-import com.ssafy.FindTodosResponse;
+import com.ssafy.todolist.domain.FindTodosResponse;
 import com.ssafy.todolist.domain.Todo;
 import com.ssafy.todolist.domain.TodoDTO;
 import com.ssafy.todolist.service.TodoService;
