@@ -1,6 +1,5 @@
 package com.ssafy.sandbox.todo.service;
 
-import com.ssafy.sandbox.todo.domain.Todo;
 import com.ssafy.sandbox.todo.dto.PageTodoOffsetResponse;
 import com.ssafy.sandbox.todo.dto.TodoDto;
 import com.ssafy.sandbox.todo.repository.TodoRepository;
@@ -17,8 +16,10 @@ import java.util.stream.Collectors;
 public class PageService {
 
     private final TodoRepository todoRepository;
+
     @Value("${success.message}")
     private String SUCCESS_MESSAGE;
+
     @Transactional
     public PageTodoOffsetResponse getTodosByOffset(int size, int page){
         int offset = (page - 1) * size;

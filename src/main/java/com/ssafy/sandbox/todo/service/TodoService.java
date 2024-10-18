@@ -20,7 +20,7 @@ public class TodoService {
     public List<TodoDto> getTodos(){
         List<Todo> todos = todoRepository.findAll();
         return todos.stream()
-                .map(todo -> new TodoDto(todo.getId(), todo.getContent(), todo.isCompleted()))
+                .map(TodoDto::from)
                 .collect(Collectors.toList());
     }
 
