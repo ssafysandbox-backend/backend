@@ -4,6 +4,7 @@ import com.ssafy.todolist.domain.OffsetResponse;
 import com.ssafy.todolist.domain.Todo;
 import com.ssafy.todolist.domain.TodoDTO;
 import com.ssafy.todolist.repository.TodoRepository;
+import com.ssafy.todolist.util.Util;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -23,7 +24,7 @@ public class PagingService {
     public OffsetResponse getOffsetPaging(int size, int page) {
         Pageable pageable = PageRequest.of(page-1,size);
         Page<Todo> p = todoRepository.findAll(pageable);
-        return new OffsetResponse("정상적으로 요청되었습니다.", page, size, p.getTotalPages(), p.hasNext(), p.hasPrevious(),  p.stream().map(TodoDTO::of).toList());
+        return new OffsetResponse(Util.RESPONSE_SUCCESS.getMessage(), page, size, p.getTotalPages(), p.hasNext(), p.hasPrevious(),  p.stream().map(TodoDTO::of).toList());
     }
 
 }
