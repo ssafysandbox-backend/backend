@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.awt.*;
-
 @RequestMapping("/paging")
 @RestController
 public class PagingController {
@@ -32,4 +30,5 @@ public class PagingController {
         CursorResponse cursorResponse = pagingService.getCursorPaging(size, cursorId);
         return ResponseEntity.ok(cursorResponse);
     }
+
 }
