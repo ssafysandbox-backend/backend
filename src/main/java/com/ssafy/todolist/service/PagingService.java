@@ -33,9 +33,10 @@ public class PagingService {
 
     @Transactional(readOnly = true)
     public OffsetResponse getOffsetPagingV2(int size, int page) {
-        List<TodoDTO> todos = todoRepository.findTodosByOffset(size, page).stream().map(TodoDTO::of).toList();
+        int offset = size * (page - 1);
+        List<TodoDTO> todos = todoRepository.findTodosByOffset(size, offset).stream().map(TodoDTO::of).toList();
         long count = todoRepository.count();
-        int totalPageCount = (int) count / size;
+        int totalPageCount = (int) Math.ceil((double) count / size);
         boolean hasNext = page < totalPageCount;
         boolean hasPrevious = page > 1;
         return new OffsetResponse(ResponseMessage.RESPONSE_SUCCESS.getMessage(), page, size, totalPageCount, hasNext, hasPrevious, todos);
