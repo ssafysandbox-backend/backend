@@ -4,7 +4,7 @@ import com.ssafy.todolist.domain.FindTodosResponse;
 import com.ssafy.todolist.domain.Todo;
 import com.ssafy.todolist.domain.TodoDTO;
 import com.ssafy.todolist.service.TodoService;
-import com.ssafy.todolist.util.Util;
+import com.ssafy.todolist.util.ResponseMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +24,7 @@ public class TodolistController {
     @GetMapping()
     public ResponseEntity<FindTodosResponse> todos() {
         List<TodoDTO> todos = todoService.getTodos();
-        FindTodosResponse response = new FindTodosResponse(Util.RESPONSE_SUCCESS.getMessage(), todos);
+        FindTodosResponse response = new FindTodosResponse(ResponseMessage.RESPONSE_SUCCESS.getMessage(), todos);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
