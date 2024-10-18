@@ -11,6 +11,9 @@ import java.util.List;
 @Repository
 public interface TodoRepository extends JpaRepository<Todo, Integer> {
 
+    @Query(value = "select * from todos limit :size offset :offset", nativeQuery = true)
+    List<Todo> findTodosByOffset(@RequestParam(name = "size") int size, @RequestParam(name = "offset") int offset);
+
     @Query(value = "select * from todos where id > :cursorId limit :size", nativeQuery = true)
     List<Todo> findTodosByCursor(@RequestParam(name = "size") int size, @RequestParam(name = "cursorId") int cursorId);
 
