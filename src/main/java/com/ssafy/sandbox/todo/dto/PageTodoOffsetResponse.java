@@ -17,7 +17,7 @@ public class PageTodoOffsetResponse {
     private List<TodoDto> todos;
 
     @Builder
-    public PageTodoOffsetResponse(String message, int currentPageNumber, int size, int totalPage, boolean hasNext, boolean hasPrevious, List<TodoDto> todos) {
+    private PageTodoOffsetResponse(String message, int currentPageNumber, int size, int totalPage, boolean hasNext, boolean hasPrevious, List<TodoDto> todos) {
         this.message = message;
         this.currentPageNumber = currentPageNumber;
         this.size = size;
