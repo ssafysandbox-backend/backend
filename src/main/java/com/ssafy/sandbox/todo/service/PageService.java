@@ -32,7 +32,7 @@ public class PageService {
         long totalTodos = todoRepository.count();
         int totalPage = (int) Math.ceil((double) totalTodos / size);
         boolean hasNext = (page+1)<totalPage;
-        boolean hasPrevious = page>0;
+        boolean hasPrevious = page>1;
 
         return PageTodoOffsetResponse.of(
                 SUCCESS_MESSAGE,
