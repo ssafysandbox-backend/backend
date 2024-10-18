@@ -1,5 +1,7 @@
 package com.ssafy.todolist.domain;
 
+import org.springframework.data.domain.Page;
+
 import java.util.List;
 
 public class OffsetResponse {
@@ -11,6 +13,18 @@ public class OffsetResponse {
     private final boolean hasNext;
     private final boolean hasPrevious;
     private final List<TodoDTO> todos;
+
+    public static OffsetResponse build(String message, int currentPageNumber, int size, Page<Todo> page) {
+        return new OffsetResponse(
+                message,
+                currentPageNumber,
+                size,
+                page.getTotalPages(),
+                page.hasNext(),
+                page.hasPrevious(),
+                page.stream().map(TodoDTO::of).toList()
+        );
+    }
 
     public OffsetResponse(String message, int currentPageNumber, int size, int totalPage, boolean hasNext, boolean hasPrevious, List<TodoDTO> todos) {
         this.message = message;
