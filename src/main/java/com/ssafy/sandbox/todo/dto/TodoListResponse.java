@@ -2,7 +2,6 @@ package com.ssafy.sandbox.todo.dto;
 
 import lombok.Getter;
 
-import java.util.Collections;
 import java.util.List;
 
 @Getter

@@ -13,7 +13,7 @@ public class TodoDto {
     private boolean completed;
 
     @Builder
-    public TodoDto(Long id, String content, boolean completed) {
+    private TodoDto(Long id, String content, boolean completed) {
         this.id = id;
         this.content = content;
         this.completed = completed;
