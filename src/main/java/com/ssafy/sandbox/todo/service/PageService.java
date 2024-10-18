@@ -1,5 +1,6 @@
 package com.ssafy.sandbox.todo.service;
 
+import com.ssafy.sandbox.todo.dto.PageTodoCursorResponse;
 import com.ssafy.sandbox.todo.dto.PageTodoOffsetResponse;
 import com.ssafy.sandbox.todo.dto.TodoDto;
 import com.ssafy.sandbox.todo.repository.TodoRepository;
@@ -41,6 +42,25 @@ public class PageService {
                 hasNext,
                 hasPrevious,
                 todosByOffset
+        );
+    }
+
+    public PageTodoCursorResponse getTodosByCursorId(int size, int cursorId) {
+        List<TodoDto> todosByCursorId = todoRepository.findAllByCursorId(size, cursorId)
+                .stream()
+                .map(TodoDto::from)
+                .collect(Collectors.toList());
+
+        Long lastId = 0L;
+        if(!todosByCursorId.isEmpty()){
+            lastId = todosByCursorId.get(todosByCursorId.size()-1).getId();
+        }
+        return PageTodoCursorResponse.of(
+                SUCCESS_MESSAGE,
+                lastId,
+                todosByCursorId.size(),
+                todoRepository.existsByIdAfter(lastId),
+                todosByCursorId
         );
     }
 }

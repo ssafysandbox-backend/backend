@@ -14,4 +14,8 @@ public interface TodoRepository extends JpaRepository<Todo, Long> {
     @Query(value = "SELECT * FROM todos LIMIT :limit OFFSET :offset", nativeQuery = true)
     List<Todo> findAllByOffset(@Param("offset") int offset, @Param("limit") int limit);
 
+    @Query("SELECT T FROM Todo T WHERE T.id >= :cursorId ORDER BY T.id LIMIT :size")
+    List<Todo> findAllByCursorId(@Param("size") int size, @Param("cursorId") int cursorId);
+
+    boolean existsByIdAfter(long id);
 }
