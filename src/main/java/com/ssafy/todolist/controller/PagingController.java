@@ -21,7 +21,8 @@ public class PagingController {
 
     @GetMapping("/offset")
     public ResponseEntity<OffsetResponse> getOffsetPaging(@RequestParam("size") Integer size, @RequestParam("page") Integer page) {
-        OffsetResponse offsetResponse = pagingService.getOffsetPaging(size, page);
+//        OffsetResponse offsetResponse = pagingService.getOffsetPaging(size, page);
+        OffsetResponse offsetResponse = pagingService.getOffsetPagingV2(size, page);
         return ResponseEntity.ok(offsetResponse);
     }
 
