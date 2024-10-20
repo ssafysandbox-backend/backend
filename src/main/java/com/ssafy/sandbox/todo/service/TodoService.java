@@ -7,7 +7,6 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,7 +20,7 @@ public class TodoService {
     public List<TodoDto> getTodos(){
         List<Todo> todos = todoRepository.findAll();
         return todos.stream()
-                .map(todo -> new TodoDto(todo.getId(), todo.getContent(), todo.isCompleted()))
+                .map(TodoDto::from)
                 .collect(Collectors.toList());
     }
 
