@@ -1,4 +1,4 @@
-package com.ssafy.sandbox.util;
+package com.ssafy.sandbox.config;
 
 
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +11,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("https://ssafytodo.vercel.app")
+                .allowedOrigins("https://ssafysandbox.vercel.app")
                 .allowCredentials(true)
                 .allowedHeaders("*")
                 .allowedMethods("*");

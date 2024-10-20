@@ -2,15 +2,15 @@ package com.ssafy.sandbox.todo.controller;
 
 
 import com.ssafy.sandbox.todo.dto.RequestDTO;
-import com.ssafy.sandbox.todo.dto.ResponseDTO;
 import com.ssafy.sandbox.todo.dto.TodoDTO;
-import com.ssafy.sandbox.todo.repository.TodoRepository;
 import com.ssafy.sandbox.todo.service.TodoService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/todos")
@@ -25,10 +25,11 @@ public class TodoController {
 
 
     @GetMapping()
-    public ResponseDTO getTodoList() {
-        ResponseDTO responseDTO = new ResponseDTO();
-        responseDTO.setTodos(todoService.getAllTodos());
-        return responseDTO;
+    public ResponseEntity<?> getTodoList() {
+        List<TodoDTO> todoList = todoService.getAllTodos();
+        Map<String, List<TodoDTO>> result = new HashMap<>();
+        result.put("todos", todoList);
+        return ResponseEntity.ok().body(result);
     }
 
     @PostMapping()
