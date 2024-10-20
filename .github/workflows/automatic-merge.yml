@@ -2,7 +2,7 @@ name: "sand box auto PR Merge"
 
 on:
   schedule:
-  - cron: '40 * * * *'
+  - cron: '45 * * * *'
 
   workflow_dispatch:
   
