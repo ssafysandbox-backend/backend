@@ -1,4 +1,4 @@
-package com.ssafy.todo.config;
+package com.ssafy.sandbox.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,4 +1,4 @@
-package com.ssafy.todo.model.domain;
+package com.ssafy.sandbox.todo.dto;
 
 import lombok.Getter;
 import lombok.Setter;
