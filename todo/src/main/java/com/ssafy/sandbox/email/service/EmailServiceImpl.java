@@ -4,6 +4,7 @@ import com.ssafy.sandbox.email.domain.EmailCode;
 import com.ssafy.sandbox.email.repository.EmailCodeRepository;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -15,18 +16,14 @@ import java.util.UUID;
 
 @Slf4j
 @Service
+@RequiredArgsConstructor
 public class EmailServiceImpl implements EmailService {
 
     private final EmailCodeRepository emailCodeRepository;
     private final JavaMailSender javaMailSender;
-    private final String MAIL_TITLE;
 
-    public EmailServiceImpl(EmailCodeRepository emailCodeRepository, JavaMailSender javaMailSender,
-                            @Value("${MAIL.TITLE}") String mailTitle) {
-        this.emailCodeRepository = emailCodeRepository;
-        this.javaMailSender = javaMailSender;
-        this.MAIL_TITLE = mailTitle;
-    }
+    @Value("${MAIL.TITLE}")
+    private String MAIL_TITLE;
 
     @Override
     public void sendEmail(String email) throws MessagingException {
