@@ -1,4 +1,6 @@
-package com.ssafy.todolist.domain;
+package com.ssafy.todolist.todo.dto;
+
+import com.ssafy.todolist.todo.domain.Todo;
 
 public record TodoDTO(int id, String content, boolean completed) {
 

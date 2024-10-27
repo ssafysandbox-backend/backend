@@ -1,9 +1,9 @@
-package com.ssafy.todolist.controller;
+package com.ssafy.todolist.todo.controller;
 
-import com.ssafy.todolist.domain.FindTodosResponse;
-import com.ssafy.todolist.domain.Todo;
-import com.ssafy.todolist.domain.TodoDTO;
-import com.ssafy.todolist.service.TodoService;
+import com.ssafy.todolist.todo.dto.FindTodosResponse;
+import com.ssafy.todolist.todo.domain.Todo;
+import com.ssafy.todolist.todo.dto.TodoDTO;
+import com.ssafy.todolist.todo.service.TodoService;
 import com.ssafy.todolist.util.ResponseMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,4 +42,5 @@ public class TodolistController {
     public void updateTodo(@PathVariable("todoId") int todoId) {
         todoService.updateTodo(todoId);
     }
+
 }

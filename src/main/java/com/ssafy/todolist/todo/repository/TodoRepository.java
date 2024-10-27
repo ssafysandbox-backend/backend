@@ -1,6 +1,6 @@
-package com.ssafy.todolist.repository;
+package com.ssafy.todolist.todo.repository;
 
-import com.ssafy.todolist.domain.Todo;
+import com.ssafy.todolist.todo.domain.Todo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

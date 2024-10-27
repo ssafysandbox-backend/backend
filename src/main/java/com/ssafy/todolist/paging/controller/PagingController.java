@@ -1,8 +1,8 @@
-package com.ssafy.todolist.controller;
+package com.ssafy.todolist.paging.controller;
 
-import com.ssafy.todolist.domain.CursorResponse;
-import com.ssafy.todolist.domain.OffsetResponse;
-import com.ssafy.todolist.service.PagingService;
+import com.ssafy.todolist.paging.dto.CursorResponse;
+import com.ssafy.todolist.paging.dto.OffsetResponse;
+import com.ssafy.todolist.paging.service.PagingService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

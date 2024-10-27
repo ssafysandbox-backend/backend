@@ -1,9 +1,8 @@
-package com.ssafy.todolist.service;
+package com.ssafy.todolist.todo.service;
 
-import com.ssafy.todolist.domain.Todo;
-import com.ssafy.todolist.domain.TodoDTO;
-import com.ssafy.todolist.repository.TodoRepository;
-
+import com.ssafy.todolist.todo.domain.Todo;
+import com.ssafy.todolist.todo.dto.TodoDTO;
+import com.ssafy.todolist.todo.repository.TodoRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -38,4 +37,5 @@ public class TodoService {
         Todo todo = todoRepository.getReferenceById(todoId);
         todo.setCompleted(!todo.getCompleted());
     }
+
 }

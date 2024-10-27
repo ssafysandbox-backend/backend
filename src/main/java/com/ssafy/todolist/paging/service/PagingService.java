@@ -1,10 +1,10 @@
-package com.ssafy.todolist.service;
+package com.ssafy.todolist.paging.service;
 
-import com.ssafy.todolist.domain.CursorResponse;
-import com.ssafy.todolist.domain.OffsetResponse;
-import com.ssafy.todolist.domain.Todo;
-import com.ssafy.todolist.domain.TodoDTO;
-import com.ssafy.todolist.repository.TodoRepository;
+import com.ssafy.todolist.paging.dto.CursorResponse;
+import com.ssafy.todolist.paging.dto.OffsetResponse;
+import com.ssafy.todolist.todo.domain.Todo;
+import com.ssafy.todolist.todo.dto.TodoDTO;
+import com.ssafy.todolist.todo.repository.TodoRepository;
 import com.ssafy.todolist.util.ResponseMessage;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
