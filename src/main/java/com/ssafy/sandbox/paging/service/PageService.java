@@ -1,7 +1,7 @@
-package com.ssafy.sandbox.todo.service;
+package com.ssafy.sandbox.paging.service;
 
-import com.ssafy.sandbox.todo.dto.PageTodoCursorResponse;
-import com.ssafy.sandbox.todo.dto.PageTodoOffsetResponse;
+import com.ssafy.sandbox.paging.dto.PageTodoCursorResponse;
+import com.ssafy.sandbox.paging.dto.PageTodoOffsetResponse;
 import com.ssafy.sandbox.todo.dto.TodoDto;
 import com.ssafy.sandbox.todo.repository.TodoRepository;
 import jakarta.transaction.Transactional;

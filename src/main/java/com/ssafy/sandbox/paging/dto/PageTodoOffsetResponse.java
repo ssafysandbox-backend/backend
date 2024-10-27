@@ -1,5 +1,6 @@
-package com.ssafy.sandbox.todo.dto;
+package com.ssafy.sandbox.paging.dto;
 
+import com.ssafy.sandbox.todo.dto.TodoDto;
 import lombok.Builder;
 import lombok.Getter;
 

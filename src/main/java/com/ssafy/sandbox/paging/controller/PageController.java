@@ -1,8 +1,8 @@
-package com.ssafy.sandbox.todo.controller;
+package com.ssafy.sandbox.paging.controller;
 
-import com.ssafy.sandbox.todo.dto.PageTodoCursorResponse;
-import com.ssafy.sandbox.todo.dto.PageTodoOffsetResponse;
-import com.ssafy.sandbox.todo.service.PageService;
+import com.ssafy.sandbox.paging.dto.PageTodoCursorResponse;
+import com.ssafy.sandbox.paging.dto.PageTodoOffsetResponse;
+import com.ssafy.sandbox.paging.service.PageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
