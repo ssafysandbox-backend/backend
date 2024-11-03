@@ -8,6 +8,7 @@ spring:
       - front.properties
       - message.properties
       - mail.properties
+      - oauth.properties
   datasource:
     url: ${DB.URL}
     username: ${DB.USERNAME}

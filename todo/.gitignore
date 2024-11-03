@@ -38,3 +38,4 @@ out/
 **/resources/front.properties
 **/resources/message.properties
 **/resources/mail.properties
+**/resources/oauth.properties
